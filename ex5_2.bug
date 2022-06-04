@@ -1,0 +1,9 @@
+model{
+    # data likelihood
+    for( i in 1:length(y) ){
+        y[i] ~ dpois(p)
+    }
+
+    # jeffreys prior for p
+    p ~ dgamma(alpha, lambda)
+}
